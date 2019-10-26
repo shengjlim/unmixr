@@ -5,6 +5,9 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { VideoDialobBoxComponent } from './components/video-dialob-box/video-dialob-box.component';
 
+export interface Choice {
+  value: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -20,6 +23,12 @@ export class AppComponent {
   ) { }
 
   title = 'bose-app';
+
+  choices: Choice[] = [
+    { value: 'Karoake' },
+    { value: 'A Cappella' },
+    { value: 'Drum Training' }
+  ];
 
   link = new FormControl();
 

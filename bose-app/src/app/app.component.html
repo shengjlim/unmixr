@@ -6,6 +6,14 @@
       <mat-label>YouTube Link</mat-label>
       <input matInput [formControl]="link">
     </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Type:</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let choice of choices" [value]="choice.value">
+          {{choice.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
       <p style="font-size: 20px; color: white">Loading...</p>
     </ngx-spinner>
