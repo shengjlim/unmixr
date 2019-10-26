@@ -35,8 +35,12 @@ export class AppComponent {
   onSubmit(): void {
     this.spinner.show();
     this.createEmbedUrl();
-    this.apiService.getAudio(this.link.value).then(res => {
-      console.log("OK");
+    fetch("http://35.230.98.121:7000?url=" + this.link.value).then(res => res.blob()).then(blob => {
+      var bb = new Blob([blob], { type: 'audio/wav' });
+      var a = document.createElement('a');
+      a.download = 'audio.wav';
+      a.href = window.URL.createObjectURL(bb);
+      a.click();
       this.spinner.hide();
       this.openVideoDialog();
     });
