@@ -20,7 +20,7 @@ export class ApiService {
 
 
   getAudio(link: string): Observable<Object> {
-    return this.http.post<Object>(this.apiURL + "?url=" + link, httpOptions).pipe(
+    return this.http.get<Object>(this.apiURL + "?url=" + link, httpOptions).pipe(
       tap((file: Object) => console.log(`got File`)),
       catchError(this.handleError<Object>('del'))
     );
