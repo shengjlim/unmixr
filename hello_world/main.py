@@ -14,7 +14,7 @@
 
 # [START gae_python37_app]
 from flask import Flask
-
+from yt2wav import getWav
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
@@ -23,6 +23,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
+    getWav('https://www.youtube.com/watch?v=nb6ou_k4OzM', "test")
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
 
