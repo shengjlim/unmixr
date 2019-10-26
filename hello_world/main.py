@@ -20,6 +20,7 @@ from flask_cors import CORS
 from yt2wav import getWav
 import test
 import os
+import shutil   # deleting directory
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
@@ -29,15 +30,23 @@ cors = CORS(app)
 
 @app.route('/')
 def main():
-
+    shutil.rmtree('tmp_umxhq')
     # Change these variables for different model configuration
     targets = ['vocals']
+    filename = 'tmp_umxhq/tmp_accompaniment.wav'
     start = 0
     duration = 30
 
     url = request.args.get('url', default = "", type = str)
     if url == "":
         return "Missing url param"
+
+    option = request.args.get('option', default = "", type= str)
+    if option == "vocals":
+        filename = 'tmp_umxhq/tmp_vocals.wav'
+    elif option == "drums":
+        targets = ['drums']
+        filename = 'tmp_umxhq/tmp_drums.wav'
 
     # Get Wav file from given URL and put it into temp folder
     getWav(url, "tmp")
@@ -47,7 +56,7 @@ def main():
 
     # Return wav file
     return send_file(
-        'tmp_umxhq/tmp_accompaniment.wav',
+        filename,
         mimetype='audio/wav',
         as_attachment=True,
         attachment_filename="ret.wav"
