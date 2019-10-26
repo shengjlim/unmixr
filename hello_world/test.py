@@ -374,7 +374,5 @@ def unmix(input_files, outdir='tmp', targets=['vocals', 'drums', 'bass', 'other'
         targets: the separated tracks that we want. eg vocals returns a vocal track and an everything else track
     """
     input_files = [input_files]
-    if len(targets) == 1:
-        targets = [targets]
     outdir = [outdir]
-    test_main(input_files=input_files, targets=targets, outdir=outdir)
+    test_main(input_files=input_files, targets=targets)

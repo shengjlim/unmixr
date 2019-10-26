@@ -29,8 +29,9 @@ def main():
     if url == "":
         return "Missing url param"
     getWav(url, "tmp")
-    """Return a friendly HTTP greeting."""
-    test.unmix('tmp/tmp.wav')
+    test.unmix('tmp/tmp.wav', targets=['vocals'])
+
+    # Return and delete the wav files
     return f"got vid for {url}"
 
 
