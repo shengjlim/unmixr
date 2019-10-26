@@ -1,13 +1,15 @@
 <div id="overallContainer">
-  <mat-toolbar>My App</mat-toolbar>
+  <mat-toolbar></mat-toolbar>
   <mat-card id="form">
     <mat-card-title id="title"><strong>Choose your mix:</strong></mat-card-title>
-    <mat-form-field appearance="fill" id="form-field">
+    <mat-form-field appearance="fill" id="linkInput">
       <mat-label>YouTube Link</mat-label>
       <input matInput [formControl]="link">
     </mat-form-field>
-
-    <button mat-raised-button color="accent">SUBMIT</button>
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+      <p style="font-size: 20px; color: white">Loading...</p>
+    </ngx-spinner>
+    <button mat-raised-button color="accent" type="submit" (click)="onSubmit()">SUBMIT</button>
   </mat-card>
 </div>
 

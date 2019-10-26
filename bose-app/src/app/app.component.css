@@ -13,3 +13,11 @@
 #fullwidth {
     width:100%;
 }
+
+#title {
+    padding-top: 10px;
+}
+
+#linkInput {
+    padding-top: 15px;
+}
