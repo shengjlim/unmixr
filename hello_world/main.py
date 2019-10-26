@@ -14,7 +14,9 @@
 
 # [START gae_python37_app]
 from flask import Flask
-
+from flask import request
+from yt2wav import getWav
+import test
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
@@ -22,9 +24,15 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+def main():
+    url = request.args.get('url', default = "", type = str)
+    if url == "":
+        return "Missing url param"
+    getWav(url, "tmp")
+    test.unmix('tmp/tmp.wav', targets=['vocals'])
+
+    # Return and delete the wav files
+    return f"got vid for {url}"
 
 
 if __name__ == '__main__':
