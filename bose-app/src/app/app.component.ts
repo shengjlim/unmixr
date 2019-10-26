@@ -35,8 +35,8 @@ export class AppComponent {
   onSubmit(): void {
     this.spinner.show();
     this.createEmbedUrl();
-    this.apiService.getAudio(this.link.value).subscribe(res => {
-      console.log(res);
+    this.apiService.getAudio(this.link.value).then(res => {
+      console.log("OK");
       this.spinner.hide();
       this.openVideoDialog();
     });

@@ -16,11 +16,11 @@ export class ApiService {
   linkUrl = '';
 
 
-  getAudio(link: string): Observable<Object> {
-    return this.http.get<Object>(this.apiURL + "?url=" + link).pipe(
-      tap((file: Object) => console.log(`got File`)),
-      catchError(this.handleError<Object>('del'))
-    );
+  getAudio(link: string): Promise<Blob> {
+    const file = this.http.get(this.apiURL + "?url=" + link, {
+      responseType: 'blob'
+  }).toPromise();
+    return file;
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
