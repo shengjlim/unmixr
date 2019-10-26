@@ -14,6 +14,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
   apiURL = 'http://35.230.98.121:7000/';
   linkUrl = '';
+  audioUrl = "";
 
 
   getAudio(link: string): Promise<Blob> {

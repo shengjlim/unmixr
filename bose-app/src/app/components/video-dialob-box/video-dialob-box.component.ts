@@ -45,7 +45,7 @@ export class VideoDialobBoxComponent implements OnInit {
     this.video = this.apiService.linkUrl;
     this.init();
     console.log()
-    audio.src = '../../../src/assets/audio/tmp_accompaniment.wav';
+    audio.src = this.apiService.audioUrl;
   }
 
   startVideo() {

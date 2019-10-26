@@ -37,10 +37,7 @@ export class AppComponent {
     this.createEmbedUrl();
     fetch("http://35.230.98.121:7000?url=" + this.link.value).then(res => res.blob()).then(blob => {
       var bb = new Blob([blob], { type: 'audio/wav' });
-      var a = document.createElement('a');
-      a.download = 'audio.wav';
-      a.href = window.URL.createObjectURL(bb);
-      a.click();
+      this.apiService.audioUrl = window.URL.createObjectURL(bb);
       this.spinner.hide();
       this.openVideoDialog();
     });
