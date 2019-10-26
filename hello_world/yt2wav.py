@@ -9,7 +9,6 @@ def getWav(url, name):
             'preferredcodec': 'wav',
             'preferredquality': '44100',
         }],
-        'no-check-certificate': True,
         'outtmpl': f"tmp/{name}.%(ext)s"
     }
 
