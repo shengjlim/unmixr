@@ -15,12 +15,12 @@ const httpOptions = {
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  apiURL = '';
+  apiURL = 'http://0.0.0.0:5000/';
   linkUrl = '';
 
 
   getAudio(link: string): Observable<Object> {
-    return this.http.get<Object>('https://jsonplaceholder.typicode.com/todos/1', httpOptions).pipe(
+    return this.http.post<Object>(this.apiURL + "?url=" + link, httpOptions).pipe(
       tap((file: Object) => console.log(`got File`)),
       catchError(this.handleError<Object>('del'))
     );
