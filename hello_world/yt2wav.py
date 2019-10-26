@@ -7,7 +7,7 @@ def getWav(url, name):
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'wav',
-            'preferredquality': '192',
+            'preferredquality': '44100',
         }],
         'outtmpl': f"tmp/{name}.%(ext)s"
     }
