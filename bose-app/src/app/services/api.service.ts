@@ -5,9 +5,6 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +12,12 @@ const httpOptions = {
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  apiURL = 'http://0.0.0.0:5000/';
+  apiURL = 'http://35.230.98.121:7000/';
   linkUrl = '';
 
 
   getAudio(link: string): Observable<Object> {
-    return this.http.get<Object>(this.apiURL + "?url=" + link, httpOptions).pipe(
+    return this.http.get<Object>(this.apiURL + "?url=" + link).pipe(
       tap((file: Object) => console.log(`got File`)),
       catchError(this.handleError<Object>('del'))
     );
