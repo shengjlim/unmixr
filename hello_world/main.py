@@ -16,6 +16,7 @@
 from flask import Flask
 from flask import request
 from yt2wav import getWav
+import test
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
@@ -29,6 +30,7 @@ def main():
         return "Missing url param"
     getWav(url, "tmp")
     """Return a friendly HTTP greeting."""
+    test.unmix('tmp/tmp.wav')
     return f"got vid for {url}"
 
 
