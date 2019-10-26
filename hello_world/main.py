@@ -15,8 +15,10 @@
 # [START gae_python37_app]
 from flask import Flask
 from flask import request
+from flask import send_file
 from yt2wav import getWav
 import test
+import os
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
@@ -25,14 +27,26 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
+    targets = ['vocals']
+    duration = 30
+
     url = request.args.get('url', default = "", type = str)
     if url == "":
         return "Missing url param"
-    getWav(url, "tmp")
-    test.unmix('tmp/tmp.wav', targets=['vocals'])
 
-    # Return and delete the wav files
-    return f"got vid for {url}"
+    # Get Wav file from given URL and put it into temp folder
+    getWav(url, "tmp")
+    # Run the trained model on the file
+    test.unmix('tmp/tmp.wav', targets=targets, duration=duration)
+    os.remove('tmp/tmp.wav')
+
+    # Return wav file
+    return send_file(
+        'tmp_umxhq/tmp_accompaniment.wav',
+        mimetype='audio/wav',
+        as_attachment=True,
+        attachment_filename="ret.wav"
+        )
 
 
 if __name__ == '__main__':
