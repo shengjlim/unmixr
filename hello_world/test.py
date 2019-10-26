@@ -367,7 +367,7 @@ if __name__ == '__main__':
         duration=args.duration, no_cuda=args.no_cuda
     )
 
-def unmix(input_files, outdir='tmp', targets=['vocals', 'drums', 'bass', 'other'], duration=30):
+def unmix(input_files, outdir='tmp', targets=['vocals', 'drums', 'bass', 'other'], start=30, duration=30):
     """
     Inputs:
         input_files: one location of the input file in .wav, .flac, or .ogg
@@ -375,4 +375,4 @@ def unmix(input_files, outdir='tmp', targets=['vocals', 'drums', 'bass', 'other'
     """
     input_files = [input_files]
     outdir = [outdir]
-    test_main(input_files=input_files, targets=targets, duration=duration)
+    test_main(input_files=input_files, targets=targets, start=start, duration=duration)
