@@ -53,3 +53,14 @@
     height:100%;
     z-index:-1;
 }
+
+#endTag {
+    display: inline-block;
+    position: absolute;
+    bottom: 1.2%;
+    right: 1%;
+}
+
+#cloudLogo {
+    margin-left: 15px;
+}

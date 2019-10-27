@@ -10,7 +10,7 @@
       <mat-error *ngIf="link.hasError('required')">YouTube Video is <strong>required</strong></mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill" id="option">
-      <mat-label>Type:</mat-label>
+      <mat-label>Mode</mat-label>
       <mat-select [formControl]="option">
         <mat-option *ngFor="let choice of choices" [value]="choice.var">
           {{choice.value}}
@@ -25,7 +25,11 @@
   <button id="directionsButton" mat-raised-button color="accent" type="submit" (click)="getDirections()">How to
     Use</button>
 </div>
-
+<div id="endTag">
+  <span>powered by </span>
+  <img id="cloudLogo" src="https://www.passcamp.com/wp-content/uploads/2019/03/Google-Cloud-icon.png" height="75"
+    width="75">
+</div>
 
 
 <router-outlet></router-outlet>

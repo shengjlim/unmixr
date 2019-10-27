@@ -1,0 +1,62 @@
+#title {
+    text-align: center;
+}
+
+#acap {
+    background-color: #b9526a;
+    height: 170px;
+    width: 170px;
+    margin-left: 5px;
+    margin-right: 5px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    opacity:90%;
+
+
+}
+
+#drums {
+    background-color: #52b989;
+    height: 170px;
+    width: 170px;
+    margin-left: 5px;
+    margin-right: 5px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    opacity:90%;
+
+}
+
+#karaoke {
+    background-color: #9eb952;
+    height: 170px;
+    width: 170px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    opacity:90%;
+
+}
+
+#inline {
+    display: inline-table;
+}
+#icons {
+    text-align: center;
+    padding-left:0;
+}
+
+img {
+    filter: grayscale(100%);
+    color:white;
+}
+
+
+  
