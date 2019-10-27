@@ -1,7 +1,7 @@
 #form {
     text-align: center;
     left: 50%;
-    margin-top: 7.5%;
+    margin-top: 2.5%;
     transform: translate(-50%);
     padding-bottom: 2%;
     width: 35%;
@@ -12,7 +12,7 @@
 
 #directionsButton {
     color:white;
-    margin-top: 2.5%;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     width: 200px;
@@ -31,6 +31,32 @@
     text-align:center;
 }
 
+#blurredBackground {
+    z-index:-2;
+    text-align:center;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100vw;
+    height:100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/SSL_SL9000J_%2872ch%29_%40_The_Cutting_Room_Recording_Studios%2C_NYC.jpg/1200px-SSL_SL9000J_%2872ch%29_%40_The_Cutting_Room_Recording_Studios%2C_NYC.jpg");
+}
+
+#blurredBackgroundWindow {
+    z-index:-1;
+    background-color:#111111;
+    opacity:0.6;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100vw;
+    height:100vh;
+}
 
 #title {
     padding-top: 10px;
@@ -51,11 +77,10 @@
     opacity: 0.5;
     width:100%;
     height:100%;
-    z-index:-1;
+
 }
 
 #endTag {
-
     position: absolute;
     bottom: 1.2%;
     right: 1%;
@@ -67,5 +92,11 @@
 }
 
 #cloudLogo {
-    margin-left: 15px;
+    margin-left: 9px;
+}
+
+#heading {
+    margin-top: 12.5%;
+    font-size: 4em;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }

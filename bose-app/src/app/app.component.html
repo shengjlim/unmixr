@@ -1,9 +1,6 @@
 <div id="overallContainer">
-  <!-- <mat-toolbar>
-    <span>unmixr</span>
-  </mat-toolbar> -->
+  <h1 id="heading">unmixr.</h1>
   <mat-card id="form">
-    <mat-card-title id="title"><strong>Choose your mix:</strong></mat-card-title>
     <mat-form-field appearance="fill" id="linkInput">
       <mat-label>YouTube Link</mat-label>
       <input matInput [formControl]="link">
@@ -24,12 +21,15 @@
   </mat-card>
   <button id="directionsButton" mat-raised-button color="accent" type="submit" (click)="getDirections()">How to
     Use</button>
+  <div id="endTag">
+    <span id="poweredBy">powered by</span>
+    <img id="cloudLogo" style="vertical-align:middle"
+      src="https://www.passcamp.com/wp-content/uploads/2019/03/Google-Cloud-icon.png" height="50" width="50">
+  </div>
 </div>
-<div id="endTag">
-  <span id="poweredBy">powered by</span>
-  <img id="cloudLogo" style="vertical-align:middle"
-    src="https://www.passcamp.com/wp-content/uploads/2019/03/Google-Cloud-icon.png" height="75" width="75">
-</div>
+<div id="blurredBackground"></div>
+<div id="blurredBackgroundWindow"></div>
+
 
 
 <router-outlet></router-outlet>
