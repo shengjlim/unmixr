@@ -30,7 +30,11 @@ cors = CORS(app)
 
 @app.route('/')
 def main():
-    shutil.rmtree('tmp_umxhq')
+
+    # Remove old files
+    if os.path.isdir('tmp_umxhq'):
+        shutil.rmtree('tmp_umxhq')
+
     # Change these variables for different model configuration
     targets = ['vocals']
     filename = 'tmp_umxhq/tmp_accompaniment.wav'
@@ -46,7 +50,6 @@ def main():
         filename = 'tmp_umxhq/tmp_vocals.wav'
     elif option == "drums":
         targets = ['drums']
-        filename = 'tmp_umxhq/tmp_drums.wav'
 
     # Get Wav file from given URL and put it into temp folder
     getWav(url, "tmp")
