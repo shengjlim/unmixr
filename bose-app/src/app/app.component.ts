@@ -7,6 +7,7 @@ import { VideoDialobBoxComponent } from './components/video-dialob-box/video-dia
 
 export interface Choice {
   value: string;
+  var: string;
 }
 
 @Component({
@@ -30,13 +31,17 @@ export class AppComponent {
     { value: 'Drum Training', var: 'drum' }
   ];
 
-  link = new FormControl();
-  option = new FormControl();
+  link = new FormControl('', Validators.required);
+  option = new FormControl('', Validators.required);
 
   onSubmit(): void {
+    if (this.option.value == '' || this.link.value == '') {
+      return;
+    }
     this.spinner.show();
     this.createEmbedUrl();
-    fetch("http://35.230.98.121:7000?url=" + this.link.value + "&option=" + ).then(res => res.blob()).then(blob => {
+    console.log(this.option.value);
+    fetch("http://35.230.98.121:7000?url=" + this.link.value + "&option=" + this.option.value).then(res => res.blob()).then(blob => {
       var bb = new Blob([blob], { type: 'audio/wav' });
       this.apiService.audioUrl = window.URL.createObjectURL(bb);
       this.spinner.hide();
