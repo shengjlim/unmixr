@@ -10,12 +10,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoMaterialModule } from './material-modules';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { VideoDialobBoxComponent } from './components/video-dialob-box/video-dialob-box.component';
+import { DirectionsdialogComponent } from './components/directionsdialog/directionsdialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoDialobBoxComponent,
-    SafePipe
+    SafePipe,
+    DirectionsdialogComponent
   ],
   imports: [
     BrowserModule,

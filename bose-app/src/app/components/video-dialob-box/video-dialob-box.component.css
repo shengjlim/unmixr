@@ -1,0 +1,18 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#downloadButton {
+    background-color: #6ED550;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+#downloadHere {
+    text-decoration: none;
+    color:white;
+}

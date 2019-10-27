@@ -22,6 +22,9 @@
     padding-top: 15px;
 }
 
+#option {
+    padding-top: 10px;
+}
 
 #filter {
     position: absolute;
