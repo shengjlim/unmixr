@@ -25,17 +25,18 @@ export class AppComponent {
   title = 'bose-app';
 
   choices: Choice[] = [
-    { value: 'Karoake' },
-    { value: 'A Cappella' },
-    { value: 'Drum Training' }
+    { value: 'Karaoke', var: 'karaoke' },
+    { value: 'A Cappella', var: 'vocals' },
+    { value: 'Drum Training', var: 'drum' }
   ];
 
   link = new FormControl();
+  option = new FormControl();
 
   onSubmit(): void {
     this.spinner.show();
     this.createEmbedUrl();
-    fetch("http://35.230.98.121:7000?url=" + this.link.value).then(res => res.blob()).then(blob => {
+    fetch("http://35.230.98.121:7000?url=" + this.link.value + "&option=" + ).then(res => res.blob()).then(blob => {
       var bb = new Blob([blob], { type: 'audio/wav' });
       this.apiService.audioUrl = window.URL.createObjectURL(bb);
       this.spinner.hide();
