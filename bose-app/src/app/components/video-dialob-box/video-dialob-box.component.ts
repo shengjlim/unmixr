@@ -44,7 +44,7 @@ export class VideoDialobBoxComponent implements OnInit {
   ngOnInit() {
     this.video = this.apiService.linkUrl;
     this.init();
-    console.log()
+    (<HTMLAnchorElement>document.getElementById('downloadHere')).href = this.apiService.audioUrl;
     audio.src = this.apiService.audioUrl;
   }
 

@@ -41,7 +41,13 @@ export class AppComponent {
     this.spinner.show();
     this.createEmbedUrl();
     console.log(this.option.value);
-    fetch("http://35.230.98.121:7000?url=" + this.link.value + "&option=" + this.option.value).then(res => res.blob()).then(blob => {
+    // fetch("http://35.230.98.121:7000?url=" + this.link.value + "&option=" + this.option.value).then(res => res.blob()).then(blob => {
+    //   var bb = new Blob([blob], { type: 'audio/wav' });
+    //   this.apiService.audioUrl = window.URL.createObjectURL(bb);
+    //   this.spinner.hide();
+    //   this.openVideoDialog();
+    // });
+    fetch("http://35.230.98.121:7000?url=" + this.link.value).then(res => res.blob()).then(blob => {
       var bb = new Blob([blob], { type: 'audio/wav' });
       this.apiService.audioUrl = window.URL.createObjectURL(bb);
       this.spinner.hide();
