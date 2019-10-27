@@ -31,6 +31,6 @@ import { DirectionsdialogComponent } from './components/directionsdialog/directi
   ],
   providers: [SafePipe],
   bootstrap: [AppComponent],
-  entryComponents: [VideoDialobBoxComponent],
+  entryComponents: [VideoDialobBoxComponent, DirectionsdialogComponent],
 })
 export class AppModule { }

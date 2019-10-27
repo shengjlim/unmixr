@@ -14,6 +14,20 @@
     width:100%;
 }
 
+#directionsButton {
+    background-color: #6AB952;
+    color:white;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+#overallContainer {
+    text-align:center;
+}
+
+
 #title {
     padding-top: 10px;
 }
