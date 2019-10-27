@@ -61,6 +61,11 @@
     right: 1%;
 }
 
+#poweredBy {
+    color: #B0BEC5;
+    vertical-align:middle;
+}
+
 #cloudLogo {
     margin-left: 15px;
 }
