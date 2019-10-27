@@ -1,7 +1,7 @@
 #form {
     text-align: center;
     left: 50%;
-    margin-top: 5%;
+    margin-top: 7.5%;
     transform: translate(-50%);
     padding-bottom: 2%;
     width: 35%;
@@ -10,16 +10,16 @@
     flex-direction: column;
 }
 
-#fullwidth {
-    width:100%;
-}
-
 #directionsButton {
     color:white;
-    margin-top: 5%;
+    margin-top: 2.5%;
     margin-left: auto;
     margin-right: auto;
     width: 200px;
+}
+
+#fullwidth {
+    width:100%;
 }
 
 #submitButton {
