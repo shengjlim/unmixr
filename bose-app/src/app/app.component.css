@@ -15,12 +15,16 @@
 }
 
 #directionsButton {
-    background-color: #6AB952;
     color:white;
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     width: 200px;
+}
+
+#submitButton {
+    background-color: #6AB952;
+    color: white;
 }
 
 #overallContainer {
