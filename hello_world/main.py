@@ -54,7 +54,7 @@ def main():
     # Get Wav file from given URL and put it into temp folder
     getWav(url, "tmp")
     # Run the trained model on the file
-    test.unmix('tmp/tmp.wav', targets=targets, start=start, duration=duration)
+    test.unmix('tmp/tmp.wav', targets=targets, start=start)
     os.remove('tmp/tmp.wav')
 
     # Return wav file
